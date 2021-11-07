@@ -7,6 +7,7 @@ let balls;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   balls = [];
+  size = [];
 }
 
 function draw(){
@@ -16,6 +17,7 @@ function draw(){
     ellipse(b.x, b.y, b.size);
     b.x += b.vx;
     b.y += b.vy;
+    b.size = random(10,50);
   }
 }
 
@@ -26,8 +28,8 @@ function mouseDragged(){
     const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
     balls.push(b);
   }
-}
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
+}
 }
